@@ -3,9 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name='viewport' content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/vue@next"></script>
         <title>Learning Vue</title>
     </head>
 <body>
     <h1>Hello Vue :)</h1>
+    <div id="app">
+        <h1>{{test1}}</h1>
+        <h2>{{test2}}</h2>
+        <h3>{{test1 + test2}}</h3>
+    </div>
 </body>
+<script>
+    const app = Vue.createApp({
+        data(){
+            return{
+                test1: "測試：",
+                test2: "這裡的文字透過{{}}來綁定在版面上"
+            }
+        }
+    })
+    const vm = app.mount('#app')
+</script>
+
 </html>
